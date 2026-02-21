@@ -10,7 +10,7 @@ function ContactScreen() {
     (contact) => Number(contact.id) === Number(contact_id),
   );
   return (
-    <div>
+    <div className="contact_screen-container">
       <ContactSideBar />
       {!contact_selected ? (
         <div>
