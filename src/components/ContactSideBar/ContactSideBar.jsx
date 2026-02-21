@@ -7,9 +7,6 @@ function ContactSideBar() {
   const { contacts } = useContext(ContactsContext);
   return (
     <div>
-      <Link to="/">
-        <h2>Whatsapp Clone Bebé</h2>
-      </Link>
       <div>
         {contacts.map((contact) => {
           return (

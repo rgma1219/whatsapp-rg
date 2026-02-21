@@ -1,0 +1,21 @@
+.home_screen-container {
+    max-width: 565px;
+    background-color: lightgray;
+}
+
+.home_screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid black;
+}
+
+.home_screen-busqueda-container {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    gap: 10px;
+    padding: 0px 20px
+}
