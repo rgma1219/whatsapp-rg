@@ -19,6 +19,13 @@ const contact = [
         created_at: "2023-01-01 12:01:00",
         is_read: true,
       },
+      {
+        id: 3,
+        text: "Y tu?",
+        sender_by_me: false,
+        created_at: "2023-01-01 12:01:00",
+        is_read: true,
+      },
     ],
   },
   {
