@@ -1,0 +1,45 @@
+.chat_input-container {
+  display: flex;
+  align-items: flex-end; /* Cambiamos a flex-end por si el texto crece */
+  padding: 10px 16px;
+  background-color: #f0f2f5;
+  gap: 8px;
+  min-height: 62px; /* Altura mínima de la barra */
+  box-sizing: border-box;
+}
+
+.chat_input-label {
+  display: none;
+}
+
+.chat_input-field {
+  flex: 1;
+  border: none;
+  border-radius: 25px; /* La forma de píldora */
+  padding: 12px 20px; /* Más espacio arriba/abajo para que no se vea chiquito */
+
+  font-size: 15px;
+  line-height: 20px; /* Altura de la línea de texto */
+  outline: none;
+  background-color: white;
+
+  resize: none;
+  height: 20px; /* Altura del contenido (sin contar padding) */
+  max-height: 120px;
+
+  font-family: inherit;
+  overflow-y: hidden; /* Escondemos el scroll feo hasta que sea necesario */
+
+  display: block;
+  box-sizing: content-box; /* Ayuda a que el padding se sume a la altura */
+}
+
+.chat_input-send-btn {
+  background: none;
+  border: none;
+  color: #00a884; /* El verde exacto de los botones de WA */
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 10px; /* Alineado con el textarea */
+  font-size: 16px;
+}

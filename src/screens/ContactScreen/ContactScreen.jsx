@@ -29,21 +29,3 @@ function ContactScreen() {
 }
 
 export default ContactScreen;
-
-/*
-<h1>El contacto seleccionado es: {contact_selected.name}</h1>
-          <div>
-            {contact_selected.messages.map((message) => {
-              return (
-                <div key={message.id}>
-                  <h3>
-                    Enviado por:{" "}
-                    {message.sender_by_me ? "Mí" : contact_selected.name}
-                  </h3>
-                  <p>{message.text}</p>
-                  <span>{message.created_at}</span>
-                </div>
-              );
-            })}
-          </div>
-*/

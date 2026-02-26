@@ -1,0 +1,49 @@
+.message_list-container {
+  flex: 1; /* Ocupa todo el espacio central */
+  overflow-y: auto; /* Aquí vive el scroll ahora */
+  padding: 20px 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-color: #efeae2;
+}
+
+/* 2. Estilo base de la burbuja */
+.message-bubble {
+  max-width: 65%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  position: relative;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. BURBUJA ENVIADA (Derecha - Verde) */
+.message-bubble.sent {
+  align-self: flex-end; /* LA CLAVE: se mueve a la derecha */
+  background-color: #d9fdd3;
+  border-top-right-radius: 0;
+}
+
+/* 4. BURBUJA RECIBIDA (Izquierda - Blanca) */
+.message-bubble.received {
+  align-self: flex-start; /* LA CLAVE: se mueve a la izquierda */
+  background-color: #ffffff;
+  border-top-left-radius: 0;
+}
+
+/* 5. Estilo del texto y la hora */
+.message-text {
+  margin: 0;
+  color: #111b21;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #667781;
+  align-self: flex-end; /* La hora se va a la esquinita de la burbuja */
+  margin-top: 4px;
+}
