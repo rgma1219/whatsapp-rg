@@ -1,10 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { ContactsContext } from "../../context/ContactsContext";
 import "./ChatInput.css";
 
-function ChatInput() {
+function ChatInput({ contact_id }) {
+  const { addNewMessage } = useContext(ContactsContext);
   function handleSubmitNewMessage(event) {
     event.preventDefault();
-    const newMessage = event.target.nuevo_mensaje.value;
+    const form = event.target;
+    const newMessage = form.nuevo_mensaje.value;
+
+    if (newMessage.trim()) {
+      addNewMessage(contact_id, newMessage);
+      form.reset(); // Esto limpia el textarea automáticamente
+    }
   }
   return (
     <form className="chat_input-container" onSubmit={handleSubmitNewMessage}>

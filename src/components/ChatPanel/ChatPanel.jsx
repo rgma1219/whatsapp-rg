@@ -14,7 +14,7 @@ function ChatPanel({ contact }) {
       <MessagesList messages={contact.messages} />
 
       {/* FOOTER */}
-      <ChatInput />
+      <ChatInput contact_id={contact.id} />
     </div>
   );
 }
