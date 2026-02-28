@@ -9,14 +9,14 @@ function ContactSideBar() {
   const { contacts } = useContext(ContactsContext);
 
   return (
-    <div className="home_screen-container">
-      <header className="home_screen-header">
-        <Link to="/" className="home_screen-titulo">
+    <div className="sidebar-container">
+      <header className="sidebar-header">
+        <Link to="/" className="sidebar-titulo">
           Whatsapp RG
         </Link>
       </header>
       <SearchBar />
-      <div className="contact_sidebar-container">
+      <div className="sidebar_contacts-container">
         {contacts.map((contact) => (
           <ContactItem key={contact.id} contact={contact} />
         ))}

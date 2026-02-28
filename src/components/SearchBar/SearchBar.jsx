@@ -20,6 +20,7 @@ function SearchBar() {
           className="searchBar-input"
           type="text"
           placeholder="Buscar contacto"
+          name="buscar-contacto"
         />
       </div>
     </div>
