@@ -1,15 +1,24 @@
+.searchBar-container,
+.searchBar-wrapper,
+.searchBar-input,
+.searchBar-icon {
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
 .searchBar-container {
   padding: 8px 16px;
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* Para que no se aplaste */
+  flex-shrink: 0;
 }
 
 .searchBar-wrapper {
   display: flex;
   align-items: center;
-  background-color: #f0f2f5;
+  background-color: var(--bg-sidebar);
   border-radius: 10px;
   padding: 0 12px;
   width: 100%;
@@ -17,7 +26,7 @@
 }
 
 .searchBar-icon {
-  color: #54656f;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
 }
@@ -28,6 +37,11 @@
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  color: #667781;
+  color: var(--text-primary);
   padding-left: 10px;
+}
+
+.searchBar-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
 }

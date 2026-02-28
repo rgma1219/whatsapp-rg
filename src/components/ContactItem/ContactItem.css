@@ -6,10 +6,11 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .contact_item-link:hover {
-  background-color: #f5f6f6;
+  background-color: var(--active-bg);
 }
 
 .contact_item-avatar {
@@ -26,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  border-bottom: 1px solid #e9edef;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .contact_item-header {
@@ -38,11 +39,13 @@
 
 .contact_item-name {
   font-size: 17px;
-  color: #111b21;
+  color: var(--text-primary);
   font-weight: 400;
+  transition: color 0.3s ease;
 }
 
 .contact_item-time {
   font-size: 12px;
-  color: #667781;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }

@@ -5,7 +5,6 @@ function WelcomePanel() {
   return (
     <div className="welcome_panel-container">
       <div className="welcome_panel-content">
-        {/* Icono central (puedes usar un SVG o una imagen) */}
         <div className="welcome_panel-icon-wrapper">
           <img
             src="/whatsapp.png"

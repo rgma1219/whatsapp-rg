@@ -1,13 +1,14 @@
 .side_nav-container {
   width: 60px;
   height: 100vh;
-  background-color: #f0f2f5; /* Color grisáceo de WA */
+  background-color: var(--bg-sidebar);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  border-right: 1px solid #d1d7db;
+  border-right: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .side_nav-top,
@@ -28,17 +29,28 @@
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #54656f;
-}
-
-.side_nav-item:hover {
-  background-color: #d1d7db; /* Gris un poco más oscuro al pasar el mouse */
-  color: #111b21; /* El icono se pone casi negro */
+  color: var(--text-secondary);
 }
 
 .nav-icon {
-  /* Aquí podés ajustar ajustes finos si el icono no viene centrado */
-  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side_nav-item.active {
+  color: var(--text-primary);
+  background-color: var(--active-bg);
+}
+
+.side_nav-item:hover {
+  background-color: var(--active-bg);
+  color: var(--text-primary);
+}
+
+.side_nav-item:hover:not(.active) {
+  background-color: var(--active-bg);
+  color: var(--text-primary);
 }
 
 .side_nav-avatar {
