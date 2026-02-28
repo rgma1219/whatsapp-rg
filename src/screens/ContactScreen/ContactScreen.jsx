@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import ContactSideBar from "../../components/ContactSideBar/ContactSideBar";
 import { useParams } from "react-router";
 import { ContactsContext } from "../../context/ContactsContext";
+import ContactSideBar from "../../components/ContactSideBar/ContactSideBar";
 import ChatPanel from "../../components/ChatPanel/ChatPanel";
 
 function ContactScreen() {

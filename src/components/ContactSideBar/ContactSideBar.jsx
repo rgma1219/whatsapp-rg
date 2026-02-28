@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { ContactsContext } from "../../context/ContactsContext";
 import { Link } from "react-router";
-import SearchBar from "../SearchBar/SearchBar"; // Importamos el buscador que separamos antes
-import "./ContactSideBar.css";
+import SearchBar from "../SearchBar/SearchBar";
 import ContactItem from "../ContactItem/ContacItem";
+import "./ContactSideBar.css";
 
 function ContactSideBar() {
   const { contacts } = useContext(ContactsContext);
@@ -16,7 +16,7 @@ function ContactSideBar() {
         </Link>
       </header>
       <SearchBar />
-      <div className="contacts-container">
+      <div className="contact_sidebar-container">
         {contacts.map((contact) => (
           <ContactItem key={contact.id} contact={contact} />
         ))}

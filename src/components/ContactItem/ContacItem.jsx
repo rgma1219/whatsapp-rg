@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import "./ContactItem.css";
 
 function ContactItem({ contact }) {
   return (
