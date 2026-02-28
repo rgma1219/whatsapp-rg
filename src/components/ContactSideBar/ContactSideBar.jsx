@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ContactsContext } from "../../context/ContactsContext";
 import { Link } from "react-router";
 import SearchBar from "../SearchBar/SearchBar";
@@ -7,6 +7,11 @@ import "./ContactSideBar.css";
 
 function ContactSideBar() {
   const { contacts } = useContext(ContactsContext);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredContacts = contacts.filter((contact) => {
+    return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   return (
     <div className="sidebar-container">
@@ -15,9 +20,9 @@ function ContactSideBar() {
           Whatsapp RG
         </Link>
       </header>
-      <SearchBar />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="sidebar_contacts-container">
-        {contacts.map((contact) => (
+        {filteredContacts.map((contact) => (
           <ContactItem key={contact.id} contact={contact} />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
 
-function SearchBar() {
+function SearchBar({ searchTerm, setSearchTerm }) {
   return (
     <div className="searchBar-container">
       <div className="searchBar-wrapper">
@@ -21,6 +21,8 @@ function SearchBar() {
           type="text"
           placeholder="Buscar contacto"
           name="buscar-contacto"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
     </div>
