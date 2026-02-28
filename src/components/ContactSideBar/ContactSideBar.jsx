@@ -21,10 +21,16 @@ function ContactSideBar() {
         </Link>
       </header>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <div className="sidebar_contacts-container">
-        {filteredContacts.map((contact) => (
-          <ContactItem key={contact.id} contact={contact} />
-        ))}
+      <div className="contacts-container">
+        {filteredContacts.length > 0 ? (
+          filteredContacts.map((contact) => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))
+        ) : (
+          <div className="no-results">
+            <p>No se encontraron contactos para "{searchTerm}"</p>
+          </div>
+        )}
       </div>
     </div>
   );
