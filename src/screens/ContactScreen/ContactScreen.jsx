@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { ContactsContext } from "../../context/ContactsContext";
 import ContactSideBar from "../../components/ContactSideBar/ContactSideBar";
 import ChatPanel from "../../components/ChatPanel/ChatPanel";
+import SideNav from "../../components/SideNav/SideNav";
 
 function ContactScreen() {
   const { contacts } = useContext(ContactsContext);
@@ -12,6 +13,7 @@ function ContactScreen() {
   );
   return (
     <div className="home_screen-main-layout">
+      <SideNav />
       <aside className="home_screen-aside-container">
         <ContactSideBar />
       </aside>

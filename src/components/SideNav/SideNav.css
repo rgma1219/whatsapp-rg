@@ -1,0 +1,50 @@
+.side_nav-container {
+  width: 60px;
+  height: 100vh;
+  background-color: #f0f2f5; /* Color grisáceo de WA */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-right: 1px solid #d1d7db;
+}
+
+.side_nav-top,
+.side_nav-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side_nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #54656f;
+}
+
+.side_nav-item:hover {
+  background-color: #d1d7db; /* Gris un poco más oscuro al pasar el mouse */
+  color: #111b21; /* El icono se pone casi negro */
+}
+
+.nav-icon {
+  /* Aquí podés ajustar ajustes finos si el icono no viene centrado */
+  color: black;
+}
+
+.side_nav-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
