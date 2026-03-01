@@ -53,6 +53,12 @@
   color: var(--text-primary);
 }
 
+.side_nav-item.theme-selected {
+  background-color: var(--active-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color); /* Un toque extra para distinguirlos */
+}
+
 .side_nav-avatar {
   width: 35px;
   height: 35px;

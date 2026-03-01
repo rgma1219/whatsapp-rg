@@ -5,7 +5,7 @@ import ContactSideBar from "../../components/ContactSideBar/ContactSideBar";
 import ChatPanel from "../../components/ChatPanel/ChatPanel";
 import SideNav from "../../components/SideNav/SideNav";
 
-function ContactScreen() {
+function ContactScreen({ theme, toggleTheme }) {
   const { contacts } = useContext(ContactsContext);
   const { contact_id } = useParams();
   const contact_selected = contacts.find(
@@ -13,7 +13,7 @@ function ContactScreen() {
   );
   return (
     <div className="home_screen-main-layout">
-      <SideNav />
+      <SideNav theme={theme} toggleTheme={toggleTheme} />
       <aside className="home_screen-aside-container">
         <ContactSideBar />
       </aside>

@@ -3,10 +3,10 @@ import SideNav from "../../components/SideNav/SideNav";
 import WelcomePanel from "../../components/WelcomePanel/WelcomePanel";
 import "./HomeScreen.css";
 
-function HomeScreen(contactState) {
+function HomeScreen({ theme, toggleTheme, contactState }) {
   return (
     <div className="home_screen-main-layout">
-      <SideNav />
+      <SideNav theme={theme} toggleTheme={toggleTheme} />
       <aside className="home_screen-aside-container">
         <ContactSideBar contactState={contactState} />
       </aside>

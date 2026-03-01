@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   MdChatBubbleOutline,
   MdChatBubble,
@@ -11,16 +11,23 @@ import {
 } from "react-icons/md";
 import "./SideNav.css";
 
-function SideNav() {
-  // 'chat' es el valor por defecto al cargar la página
+function SideNav({ theme, toggleTheme }) {
+  // Maneja el estado de la sección activa para seleccionar el ícono, 'chat' es el valor por defecto al cargar la página
   const [activeTab, setActiveTab] = useState("chat");
-  const [theme, setTheme] = useState("light");
 
-  const toggleTheme = (selectedTheme) => {
-    setTheme(selectedTheme);
-    // Esta línea es la magia: le pone al body 'data-theme=dark' o 'light'
-    document.body.setAttribute("data-theme", selectedTheme);
-  };
+  // Observa el estado de la sección activa para seleccionar el ícono y realizar la animación de cambio de ícono para la sección seleccionada (chat/estados).
+  useEffect(() => {
+    if (activeTab === "status") {
+      const timer = setTimeout(() => {
+        alert(
+          "🚧 Sección en construcción: Muy pronto podrás ver los Estados aquí.",
+        );
+        setActiveTab("chat");
+      }, 200);
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeTab]);
 
   return (
     <nav className="side_nav-container">
@@ -41,11 +48,7 @@ function SideNav() {
         {/* Icono Estados */}
         <button
           className={`side_nav-item ${activeTab === "status" ? "active" : ""}`}
-          onClick={() =>
-            alert(
-              "🚧 Sección en construcción: Muy pronto podrás ver los Estados aquí.",
-            )
-          }
+          onClick={() => setActiveTab("status")}
           title="Estados"
         >
           {activeTab === "status" ? (
@@ -57,9 +60,10 @@ function SideNav() {
       </div>
 
       <div className="side_nav-middle">
+        {/* Botón Modo Claro */}
         <button
-          className={`side_nav-item theme-btn ${theme === "light" ? "active" : ""}`}
-          onClick={() => toggleTheme("light")} // Usamos la nueva función
+          className={`side_nav-item theme-btn ${theme === "light" ? "theme-selected" : ""}`}
+          onClick={() => toggleTheme("light")}
           title="Modo Claro"
         >
           {theme === "light" ? (
@@ -69,9 +73,10 @@ function SideNav() {
           )}
         </button>
 
+        {/* Botón Modo Oscuro */}
         <button
-          className={`side_nav-item theme-btn ${theme === "dark" ? "active" : ""}`}
-          onClick={() => toggleTheme("dark")} // Usamos la nueva función
+          className={`side_nav-item theme-btn ${theme === "dark" ? "theme-selected" : ""}`}
+          onClick={() => toggleTheme("dark")}
           title="Modo Oscuro"
         >
           {theme === "dark" ? (
@@ -83,6 +88,7 @@ function SideNav() {
       </div>
 
       <div className="side_nav-bottom">
+        {/* Icono Perfil */}
         <img
           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
           alt="Perfil"
