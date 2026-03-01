@@ -1,15 +1,18 @@
 .message_list-container {
-  flex: 1; /* Ocupa todo el espacio central */
-  overflow-y: auto; /* Aquí vive el scroll ahora */
+  flex: 1;
+  overflow-y: auto;
   padding: 20px 7%;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  /* PATRÓN DINÁMICO */
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
-  background-color: #efeae2;
+  background-color: var(--bg-chat);
+  background-blend-mode: overlay; /* Esto fusiona los dibujos con el color de fondo */
+  background-attachment: fixed;
+  transition: background-color 0.3s ease;
 }
 
-/* 2. Estilo base de la burbuja */
 .message-bubble {
   max-width: 65%;
   padding: 8px 12px;
@@ -19,31 +22,32 @@
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
   display: flex;
   flex-direction: column;
+  color: var(--text-primary);
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-/* 3. BURBUJA ENVIADA (Derecha - Verde) */
-.message-bubble.sent {
-  align-self: flex-end; /* LA CLAVE: se mueve a la derecha */
-  background-color: #d9fdd3;
-  border-top-right-radius: 0;
-}
-
-/* 4. BURBUJA RECIBIDA (Izquierda - Blanca) */
-.message-bubble.received {
-  align-self: flex-start; /* LA CLAVE: se mueve a la izquierda */
-  background-color: #ffffff;
-  border-top-left-radius: 0;
-}
-
-/* 5. Estilo del texto y la hora */
-.message-text {
+.message-bubble p {
   margin: 0;
-  color: #111b21;
+  padding: 0;
+  width: 100%;
+}
+
+.message-bubble.sent {
+  align-self: flex-end;
+  background-color: var(--bubble-out); /* Verde WA o Verde Oscuro */
+}
+
+.message-bubble.received {
+  align-self: flex-start;
+  background-color: var(--bubble-in); /* Blanco o Gris Oscuro */
 }
 
 .message-time {
   font-size: 11px;
-  color: #667781;
-  align-self: flex-end; /* La hora se va a la esquinita de la burbuja */
+  color: var(--text-secondary); /* Hora en gris dinámico */
+  align-self: flex-end;
   margin-top: 4px;
 }

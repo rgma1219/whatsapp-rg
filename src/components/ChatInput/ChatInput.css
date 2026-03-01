@@ -1,45 +1,73 @@
+/* 1. Contenedor principal del input */
 .chat_input-container {
   display: flex;
-  align-items: flex-end; /* Cambiamos a flex-end por si el texto crece */
+  align-items: flex-end;
   padding: 10px 16px;
-  background-color: #f0f2f5;
+  background-color: var(--bg-sidebar);
   gap: 8px;
-  min-height: 62px; /* Altura mínima de la barra */
+  min-height: 62px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
+/* 2. Ocultar el Label */
 .chat_input-label {
-  display: none;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
+/* 3. El campo de texto (píldora) */
 .chat_input-field {
   flex: 1;
   border: none;
-  border-radius: 25px; /* La forma de píldora */
-  padding: 12px 20px; /* Más espacio arriba/abajo para que no se vea chiquito */
-
+  border-radius: 25px;
+  padding: 12px 20px;
   font-size: 15px;
-  line-height: 20px; /* Altura de la línea de texto */
+  line-height: 20px;
   outline: none;
-  background-color: white;
-
+  background-color: var(--chat-input-bg);
+  color: var(--text-primary);
   resize: none;
-  height: 20px; /* Altura del contenido (sin contar padding) */
+  height: 20px;
   max-height: 120px;
-
   font-family: inherit;
-  overflow-y: hidden; /* Escondemos el scroll feo hasta que sea necesario */
+  overflow-y: hidden;
+  box-sizing: content-box;
 
-  display: block;
-  box-sizing: content-box; /* Ayuda a que el padding se sume a la altura */
+  transition: all 0.3s ease;
 }
 
+/* 4. Estilo para el placeholder en modo oscuro */
+.chat_input-field::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* 5. Botón de Enviar */
 .chat_input-send-btn {
   background: none;
   border: none;
-  color: #00a884; /* El verde exacto de los botones de WA */
+  color: #00a884;
   font-weight: 600;
   cursor: pointer;
-  padding: 12px 10px; /* Alineado con el textarea */
+  padding: 12px 10px;
   font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.chat_input-send-btn:hover {
+  opacity: 0.8;
+}
+
+.chat_input-send-btn:disabled {
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.5;
 }

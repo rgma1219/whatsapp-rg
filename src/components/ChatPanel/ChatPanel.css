@@ -1,25 +1,9 @@
 .chat_panel-container {
   display: flex;
-  flex-direction: column; /* Apila elementos verticalmente */
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #efeae2; /* El color de fondo de WA */
-}
-
-.chat_panel-footer {
-  height: 62px;
-  background-color: #f0f2f5;
-  display: flex;
-  align-items: center;
-  padding: 5px 15px;
-  gap: 10px;
-}
-
-.chat_panel-input {
-  flex: 1;
-  border: none;
-  border-radius: 8px;
-  padding: 9px 12px;
-  font-size: 15px;
-  outline: none;
+  background-color: var(--bg-chat); /* Color de fondo dinámico */
+  transition: background-color 0.3s ease;
+  border-left: 1px solid var(--border-color);
 }

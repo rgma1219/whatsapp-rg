@@ -1,11 +1,12 @@
 .chat_header-container {
   height: 60px;
-  background-color: #f0f2f5;
+  background-color: var(--bg-sidebar); /* Mismo gris que la SideNav */
   display: flex;
   align-items: center;
   padding: 0 16px;
   gap: 12px;
-  border-left: 1px solid #d1d7db;
+  border-bottom: 1px solid var(--border-color); /* Borde sutil inferior */
+  transition: background-color 0.3s ease;
 }
 
 .chat_header-avatar {
@@ -18,5 +19,6 @@
 .chat_header-name {
   margin: 0;
   font-size: 16px;
-  color: #111b21;
+  color: var(--text-primary); /* Texto dinámico */
+  transition: color 0.3s ease;
 }

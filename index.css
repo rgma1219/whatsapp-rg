@@ -40,6 +40,10 @@
   --text-secondary: #667781;
   --border-color: #d1d7db;
   --active-bg: #d1d7db;
+  --bg-chat: #efeae2;
+  --bubble-out: #d9fdd3;
+  --bubble-in: #ffffff;
+  --chat-input-bg: #ffffff;
 }
 
 /* 4. CAMBIO AUTOMÁTICO AL ACTIVAR DARK */
@@ -51,6 +55,10 @@
   --text-secondary: #8696a0;
   --border-color: #222d34;
   --active-bg: #374045;
+  --bg-chat: #0b141a;
+  --bubble-out: #005c4b;
+  --bubble-in: #202c33;
+  --chat-input-bg: #2a3942;
 }
 
 /* 5. APLICAR COLOR BASE AL BODY */

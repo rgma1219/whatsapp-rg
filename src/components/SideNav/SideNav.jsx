@@ -41,7 +41,11 @@ function SideNav() {
         {/* Icono Estados */}
         <button
           className={`side_nav-item ${activeTab === "status" ? "active" : ""}`}
-          onClick={() => setActiveTab("status")}
+          onClick={() =>
+            alert(
+              "🚧 Sección en construcción: Muy pronto podrás ver los Estados aquí.",
+            )
+          }
           title="Estados"
         >
           {activeTab === "status" ? (
