@@ -17,14 +17,28 @@
   padding: 10px 16px;
   flex-shrink: 0;
   background-color: var(--bg-main);
+  gap: 12px; /* Espacio entre hamburguesa y título */
 }
 
 .sidebar-titulo {
-  font-size: 22px;
+  font-size: 20px; /* Bajamos un pelín para que entre todo en móvil */
   font-weight: 700;
   color: #00a884;
   text-decoration: none;
   margin: 0;
+  white-space: nowrap;
+}
+
+/* --- BOTÓN HAMBURGUESA --- */
+.hamburger-btn {
+  display: none; /* Oculto por defecto en PC */
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar_contacts-container {
@@ -38,4 +52,19 @@
   text-align: center;
   color: var(--text-secondary);
   font-size: 14px;
+}
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 767px) {
+  .hamburger-btn {
+    display: flex; /* Aparece solo en móvil */
+  }
+
+  .sidebar-titulo {
+    font-size: 18px; /* Ajuste fino para pantallas de 320px */
+  }
+
+  .sidebar-container {
+    border-right: none; /* En móvil ocupa todo el ancho, no necesita borde */
+  }
 }

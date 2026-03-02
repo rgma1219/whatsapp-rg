@@ -4,11 +4,15 @@ import MessagesList from "../MessagesList/MessagesList";
 import ChatInput from "../ChatInput/ChatInput";
 import "./ChatPanel.css";
 
-function ChatPanel({ contact }) {
+function ChatPanel({ contact, openMenu }) {
   return (
     <div className="chat_panel-container">
       {/* HEADER */}
-      <ChatHeader name={contact.name} contact_photo={contact.profile_picture} />
+      <ChatHeader
+        name={contact.name}
+        contact_photo={contact.profile_picture}
+        openMenu={openMenu}
+      />
 
       {/* MENSAJES */}
       <MessagesList messages={contact.messages} />

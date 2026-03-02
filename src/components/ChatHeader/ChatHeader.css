@@ -22,3 +22,27 @@
   color: var(--text-primary); /* Texto dinámico */
   transition: color 0.3s ease;
 }
+
+.back-button {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- RESPONSIVE MÓVIL (320px a 767px) --- */
+@media (max-width: 767px) {
+  .back-button {
+    display: flex; /* APARECE solo en móviles */
+  }
+
+  .chat_header-container {
+    padding: 10px; /* Ajustamos un poco el padding para que quepa el botón */
+    display: flex;
+    align-items: center;
+  }
+}

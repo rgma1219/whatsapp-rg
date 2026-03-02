@@ -11,7 +11,7 @@ import {
 } from "react-icons/md";
 import "./SideNav.css";
 
-function SideNav({ theme, toggleTheme }) {
+function SideNav({ theme, toggleTheme, isMenuOpen, closeMenu }) {
   // Maneja el estado de la sección activa para seleccionar el ícono, 'chat' es el valor por defecto al cargar la página
   const [activeTab, setActiveTab] = useState("chat");
 
@@ -29,8 +29,16 @@ function SideNav({ theme, toggleTheme }) {
     }
   }, [activeTab]);
 
+  // Función para manejar el clic y cerrar el menú en móvil
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    if (window.innerWidth < 768) {
+      closeMenu(); // Se cierra sola tras elegir una opción
+    }
+  };
+
   return (
-    <nav className="side_nav-container">
+    <nav className={`side_nav-container ${isMenuOpen ? "open" : ""}`}>
       <div className="side_nav-top">
         {/* Icono Mensajes */}
         <button
