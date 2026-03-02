@@ -1,11 +1,11 @@
 .chat_header-container {
   height: 60px;
-  background-color: var(--bg-sidebar); /* Mismo gris que la SideNav */
+  background-color: var(--bg-sidebar);
   display: flex;
   align-items: center;
   padding: 0 16px;
   gap: 12px;
-  border-bottom: 1px solid var(--border-color); /* Borde sutil inferior */
+  border-bottom: 1px solid var(--border-color);
   transition: background-color 0.3s ease;
 }
 
@@ -19,30 +19,58 @@
 .chat_header-name {
   margin: 0;
   font-size: 16px;
-  color: var(--text-primary); /* Texto dinámico */
+  color: var(--text-primary);
   transition: color 0.3s ease;
 }
 
 .back-button {
-  display: none;
+  display: none; /* Se activa solo en móvil vía media query abajo */
   background: transparent;
   border: none;
-  color: var(--text-primary);
   cursor: pointer;
-  margin-right: 10px;
+  padding: 8px;
+  margin-left: -8px;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s ease;
+
+  /* Reset de estilos de Link (<a>) */
+  text-decoration: none;
+  color: var(--text-primary);
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* Quita el recuadro azul en Android/iOS */
+}
+
+/* BLOQUE ANTI-VIOLETA: Forzamos todos los estados posibles del Link */
+.back-button,
+.back-button:link,
+.back-button:visited,
+.back-button:hover,
+.back-button:focus,
+.back-button:active {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Aseguramos que el icono interno también obedezca el color */
+.back-button svg {
+  fill: currentColor;
+  display: block;
+}
+
+/* Feedback visual al tocar en el celular */
+.back-button:active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* --- RESPONSIVE MÓVIL (320px a 767px) --- */
 @media (max-width: 767px) {
   .back-button {
-    display: flex; /* APARECE solo en móviles */
+    display: flex;
   }
 
   .chat_header-container {
-    padding: 10px; /* Ajustamos un poco el padding para que quepa el botón */
-    display: flex;
-    align-items: center;
+    padding: 0 12px;
   }
 }

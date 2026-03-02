@@ -1,22 +1,15 @@
 import React from "react";
-import { Link } from "react-router"; // Quitamos useNavigate si no lo usas
-import { MdArrowBack, MdMenu } from "react-icons/md"; // <--- Agregamos MdMenu
+import { Link } from "react-router";
+import { MdArrowBack } from "react-icons/md";
 import "./ChatHeader.css";
 
-// Recibimos 'openMenu' como prop
-function ChatHeader({ name, contact_photo, openMenu }) {
+function ChatHeader({ name, contact_photo }) {
   return (
     <header className="chat_header-container">
-      {/* Botón hamburguesa */}
-      <button className="hamburger-btn" onClick={openMenu}>
-        <MdMenu size={28} />
-      </button>
-
-      <button className="back-button">
-        <Link to="/">
-          <MdArrowBack size={24} />
-        </Link>
-      </button>
+      {/* El Link ahora es el componente principal, sin un botón rodeándolo */}
+      <Link to="/" className="back-button">
+        <MdArrowBack size={24} />
+      </Link>
 
       <img
         src={contact_photo}
