@@ -1,30 +1,26 @@
 .side_nav-container {
   width: 60px;
-  height: 100dvh; /* Ocupa todo el alto */
+  height: 100dvh; /* Evita el scroll por barras de navegador en móviles */
   background-color: var(--bg-sidebar);
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* ESTA ES LA CLAVE PARA LA DISTRIBUCIÓN */
   justify-content: space-between;
   padding: 20px 0;
   border-right: 1px solid var(--border-color);
   box-sizing: border-box;
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
-/* Agrupadores de iconos */
 .side_nav-top,
 .side_nav-middle,
 .side_nav-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Espaciado equilibrado */
 }
-
-/* El grupo del medio lo empujamos un poco si es necesario, 
-   pero con space-between ya debería quedar centrado */
 
 .side_nav-item {
   display: flex;
@@ -32,18 +28,41 @@
   align-items: center;
   width: 42px;
   height: 42px;
-  border-radius: 8px; /* Un toque más moderno */
+  border-radius: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
   color: var(--text-secondary);
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
+/* RESALTADO UNIFICADO: Instantáneo para navegación y temas */
 .side_nav-item.active,
-.side_nav-item:hover {
+.side_nav-item.theme-selected {
   color: var(--text-primary);
   background-color: var(--active-bg);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* HOVER: Exclusivo para escritorio para evitar bugs visuales en S25+ */
+@media (min-width: 768px) {
+  .side_nav-item:hover {
+    color: var(--text-primary);
+    background-color: var(--active-bg);
+  }
+
+  .side_nav-avatar:hover {
+    border-color: var(--text-primary);
+  }
+}
+
+/* FEEDBACK TÁCTIL: Reacción inmediata al presionar */
+.side_nav-item:active {
+  transform: scale(0.92);
+  background-color: var(--active-bg);
+  opacity: 0.8;
 }
 
 .side_nav-avatar {
@@ -52,11 +71,8 @@
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid transparent;
+  cursor: pointer;
   transition: border-color 0.2s ease;
-}
-
-.side_nav-avatar:hover {
-  border-color: var(--text-primary);
 }
 
 /* --- RESPONSIVE MÓVIL --- */
@@ -64,23 +80,21 @@
   .side_nav-container {
     position: fixed;
     top: 0;
-    left: -75px; /* Bien escondida */
+    left: -75px;
     width: 65px;
     height: 100dvh;
     z-index: 10000;
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 2px 0 12px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
   }
 
   .side_nav-container.open {
     left: 0;
   }
-}
 
-/* --- ESCRITORIO --- */
-@media (min-width: 768px) {
-  .hamburger-btn {
-    display: none;
+  /* Ajuste de gap para pantallas pequeñas */
+  .side_nav-top,
+  .side_nav-middle {
+    gap: 12px;
   }
 }
