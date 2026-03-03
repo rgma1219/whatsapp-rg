@@ -26,21 +26,21 @@
 /* --- RESPONSIVE MÓVIL (320px a 767px) --- */
 @media (max-width: 767px) {
   .home_screen-side_nav {
-    position: absolute; /* No ocupa lugar en el flujo */
+    position: absolute;
     width: 0;
   }
 
   .home_screen-aside-container {
-    width: 100%; /* La lista ocupa toda la pantalla */
+    width: 100%;
   }
 
   .home_screen-main-content {
-    display: none; /* Por defecto, el chat NO SE VE en la Home */
+    display: none;
   }
 
   /* CUANDO HAY UN CONTACTO ACTIVO (ContactScreen.jsx) */
   .contact-active .home_screen-aside-container {
-    display: none; /* Escondemos la lista para ver el chat */
+    display: none;
   }
 
   .contact-active .home_screen-main-content {
@@ -50,7 +50,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10; /* El chat se pone arriba de todo */
+    z-index: 10;
   }
 
   /* OVERLAY DE LA SIDENAV */

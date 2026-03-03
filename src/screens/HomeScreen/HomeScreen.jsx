@@ -9,7 +9,7 @@ function HomeScreen({ theme, toggleTheme, contactState }) {
 
   return (
     <div className="home_screen-main-layout">
-      {/* CAPA OSCURA: Aparece solo si el menú está abierto */}
+      {/* CAPA OSCURA: Aparece solo si el menú está abierto en mobile*/}
       {isMenuOpen && (
         <div className="menu-overlay" onClick={() => setIsMenuOpen(false)} />
       )}
