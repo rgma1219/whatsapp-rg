@@ -26,9 +26,7 @@ function ChatHeader({ name, contact_photo }) {
 
         <div className="chat_header-info">
           <h4 className="chat_header-name">{name}</h4>
-          <span className="chat_header-status">
-            clic para info. del contacto
-          </span>
+          <span className="chat_header-status">Info. del contacto</span>
         </div>
       </button>
 
