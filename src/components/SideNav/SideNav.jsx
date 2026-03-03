@@ -52,7 +52,6 @@ function SideNav({ theme, toggleTheme, isMenuOpen, closeMenu }) {
           )}
         </button>
 
-        {/* Sección Estados (No usamos handleAction aquí para dejar que el useEffect maneje el flujo) */}
         <button
           className={`side_nav-item ${activeTab === "status" ? "active" : ""}`}
           onClick={() => setActiveTab("status")}
@@ -99,7 +98,10 @@ function SideNav({ theme, toggleTheme, isMenuOpen, closeMenu }) {
           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
           alt="Perfil"
           className="side_nav-avatar"
-          onClick={() => handleAction()} // Solo cierra el menú en móvil
+          onClick={() => {
+            alert("🚧 Perfil en desarrollo.");
+            handleAction();
+          }}
         />
       </div>
     </nav>

@@ -6,7 +6,27 @@
   padding: 0 16px;
   gap: 12px;
   border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.3s ease;
+  color: var(--text-secondary); /* Color base para iconos */
+}
+
+/* Área cliqueable del perfil */
+.chat_header-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  margin-left: -4px; /* Ajuste para compensar el padding y alinear con el borde */
+  border-radius: 8px;
+  cursor: pointer;
+  flex-grow: 1; /* Empuja las acciones a la derecha */
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.chat_header-profile-btn:hover {
+  background-color: var(--bg-hover);
 }
 
 .chat_header-avatar {
@@ -14,63 +34,80 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.chat_header-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita que nombres largos rompan el layout */
 }
 
 .chat_header-name {
   margin: 0;
   font-size: 16px;
+  font-weight: 500;
   color: var(--text-primary);
-  transition: color 0.3s ease;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
+.chat_header-status {
+  font-size: 12px;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+/* Contenedor de iconos de la derecha */
+.chat_header-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.icon-btn,
 .back-button {
-  display: none; /* Se activa solo en móvil vía media query abajo */
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
-  margin-left: -8px;
-  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
-
-  /* Reset de estilos de Link (<a>) */
-  text-decoration: none;
-  color: var(--text-primary);
-  outline: none;
-  -webkit-tap-highlight-color: transparent; /* Quita el recuadro azul en Android/iOS */
-}
-
-/* BLOQUE ANTI-VIOLETA: Forzamos todos los estados posibles del Link */
-.back-button,
-.back-button:link,
-.back-button:visited,
-.back-button:hover,
-.back-button:focus,
-.back-button:active {
-  color: var(--text-primary);
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  color: inherit; /* Hereda var(--text-secondary) del container */
   text-decoration: none;
 }
 
-/* Aseguramos que el icono interno también obedezca el color */
-.back-button svg {
-  fill: currentColor;
-  display: block;
+.icon-btn:hover,
+.back-button:hover {
+  background-color: var(--bg-hover);
 }
 
-/* Feedback visual al tocar en el celular */
-.back-button:active {
-  background-color: rgba(0, 0, 0, 0.1);
+.back-button {
+  display: none;
+  margin-left: -8px;
 }
 
-/* --- RESPONSIVE MÓVIL (320px a 767px) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 767px) {
   .back-button {
     display: flex;
   }
 
   .chat_header-container {
-    padding: 0 12px;
+    padding: 0 10px;
+    gap: 4px;
+  }
+
+  .chat_header-profile-btn {
+    gap: 8px;
+    padding: 4px;
+  }
+
+  .chat_header-status {
+    display: none; /* Ocultamos el status en móvil para ganar espacio */
   }
 }
