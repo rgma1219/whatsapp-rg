@@ -15,21 +15,23 @@ function ChatInput({ contact_id }) {
     }
   }
   return (
-    <form className="chat_input-container" onSubmit={handleSubmitNewMessage}>
-      <label htmlFor="nuevo_mensaje" className="chat_input-label">
-        Nuevo mensaje
-      </label>
-      <textarea
-        placeholder="Escribe un mensaje"
-        className="chat_input-field"
-        id="nuevo_mensaje"
-        name="nuevo_mensaje"
-        required
-      />
-      <button type="submit" className="chat_input-send-btn">
-        Enviar
-      </button>
-    </form>
+    <footer>
+      <form className="chat_input-container" onSubmit={handleSubmitNewMessage}>
+        <label htmlFor="nuevo_mensaje" className="chat_input-label">
+          Nuevo mensaje
+        </label>
+        <textarea
+          placeholder="Escribe un mensaje"
+          className="chat_input-field"
+          id="nuevo_mensaje"
+          name="nuevo_mensaje"
+          required
+        />
+        <button type="submit" className="chat_input-send-btn">
+          Enviar
+        </button>
+      </form>
+    </footer>
   );
 }
 
